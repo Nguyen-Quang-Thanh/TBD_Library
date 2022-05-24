@@ -8,10 +8,10 @@ using TBD_library.Data.Enums;
 namespace TBD_library.Data.Entities
 {
      public class Registration
-    {
-         int User_id                { get; set; }
+     {
          DateTime Registration_date { get; set; }
          eRegistrationStatus Status { get; set; }
          int Cinema_id              { get; set; }
-    }
+         Guid User_id               { get; set; }
+     }
 }

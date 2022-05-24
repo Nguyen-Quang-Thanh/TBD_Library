@@ -18,6 +18,6 @@ namespace TBD_library.Data.Entities
         DateTime Updated_at { get; set; }
         string Slug         { get; set; }
         ePostStatus Status  { get; set; }
-        int User_id         { get; set; }
+        Guid User_id        { get; set; }
     }
 }

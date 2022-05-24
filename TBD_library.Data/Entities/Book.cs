@@ -19,7 +19,7 @@ namespace TBD_library.Data.Entities
         DateTime Created_at  { get; set; }
         eBookStatus Status   { get; set; }
         string Slug          { get; set; }
-        int User_id          { get; set; }
-        int BorrowBook_id    { get; set; }
+        Guid User_id         { get; set; }
+        int? BorrowBook_id   { get; set; }
     }                                   
 }

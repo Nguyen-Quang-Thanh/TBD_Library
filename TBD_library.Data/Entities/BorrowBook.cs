@@ -14,7 +14,7 @@ namespace TBD_library.Data.Entities
         DateTime Borrowed_time  { get; set; }
         DateTime GiveBack_date  { get; set; }
         eBorrowBookStatus Status{ get; set; }
-        int User_id             { get; set; }
+        Guid User_id            { get; set; }
 
     }
 }

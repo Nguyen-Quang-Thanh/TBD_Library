@@ -12,6 +12,6 @@ namespace TBD_library.Data.Entities
          DateTime Borrow_date       { get; set; }
          DateTime Time              { get; set; }
          int ParticipantNumber      { get; set; } // số người tham gia
-         int User_id                { get; set; }
+         Guid User_id               { get; set; }
     }
 }

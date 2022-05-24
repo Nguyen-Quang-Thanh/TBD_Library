@@ -16,7 +16,7 @@ namespace TBD_library.Data.Entities
         int RegistrationLimit   { get; set; } //giới hạn người tham dự
         string Slug             { get; set; }
         eCinemaStatus Status    { get; set; }
-        int User_id             { get; set; }
+        Guid User_id            { get; set; }
         int Movie_id            { get; set; }
 
     }
