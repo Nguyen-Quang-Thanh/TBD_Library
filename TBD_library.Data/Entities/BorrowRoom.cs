@@ -10,7 +10,7 @@ namespace TBD_library.Data.Entities
     {
          public int Id                     { get; set; }
          public DateTime Borrow_date       { get; set; }
-         public DateTime Time              { get; set; }
+         public TimeSpan Time              { get; set; }
          public int ParticipantNumber      { get; set; } // số người tham gia
          public Guid User_id               { get; set; }
     }

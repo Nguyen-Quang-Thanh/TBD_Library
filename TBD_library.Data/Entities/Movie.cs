@@ -12,7 +12,7 @@ namespace TBD_library.Data.Entities
         public string Name      { get; set; }
         public string Summary   { get; set; }
         public string Img       { get; set; }
-        public string Trailer    { get; set; }
-        public DateTime Time    { get; set; }
+        public string Trailer   { get; set; }
+        public TimeSpan Time    { get; set; }
     }
 }

@@ -8,8 +8,8 @@ namespace TBD_library.Data.Enums
 {
     public enum eCinemaStatus
     {
-        allowed,
-        NoAllowed,
-        full,
+        allowed, // cho phép đăng ký --  allow registration watching movie
+        NoAllowed, // không cho phép -- don't allow registration
+        full, // now this room are full
     }
 }

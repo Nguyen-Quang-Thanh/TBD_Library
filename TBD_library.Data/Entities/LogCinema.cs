@@ -12,7 +12,7 @@ namespace TBD_library.Data.Entities
         public string NameLibarian        { get; set; }
         public string MovieName           { get; set; }
         public DateTime Watching_date     { get; set; }
-        public DateTime time              { get; set; }
+        public TimeSpan Time              { get; set; }
         public int RegistrationNumber     { get; set; }
     }
 }
