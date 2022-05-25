@@ -9,9 +9,10 @@ namespace TBD_library.Data.Entities
 {
      public class Registration
      {
-         DateTime Registration_date { get; set; }
-         eRegistrationStatus Status { get; set; }
-         int Cinema_id              { get; set; }
-         Guid User_id               { get; set; }
+         public int Id                     { get; set; }
+         public DateTime Registration_date { get; set; }
+         public eRegistrationStatus Status { get; set; }
+         public int Cinema_id              { get; set; }
+         public Guid User_id               { get; set; }
      }
 }

@@ -8,11 +8,11 @@ namespace TBD_library.Data.Entities
 {
     public class LogCinema
     {
-        int Id                     { get; set; }
-        string NameLibarian        { get; set; }
-        string MovieName           { get; set; }
-        DateTime Watching_date     { get; set; }
-        DateTime time              { get; set; }
-        int RegistrationNumber     { get; set; }
+        public int Id                     { get; set; }
+        public string NameLibarian        { get; set; }
+        public string MovieName           { get; set; }
+        public DateTime Watching_date     { get; set; }
+        public DateTime time              { get; set; }
+        public int RegistrationNumber     { get; set; }
     }
 }

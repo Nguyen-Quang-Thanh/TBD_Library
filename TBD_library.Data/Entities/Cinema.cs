@@ -9,15 +9,15 @@ namespace TBD_library.Data.Entities
 {
     public class Cinema
     {
-        int Id                  { get; set; }
-        DateTime Create_at      { get; set; }
-        DateTime watching_date  { get; set; }
-        int RegistrationNumber  { get; set; } //lượng người tham dự
-        int RegistrationLimit   { get; set; } //giới hạn người tham dự
-        string Slug             { get; set; }
-        eCinemaStatus Status    { get; set; }
-        Guid User_id            { get; set; }
-        int Movie_id            { get; set; }
+        public int Id                  { get; set; }
+        public DateTime Create_at      { get; set; }
+        public DateTime watching_date  { get; set; }
+        public int RegistrationNumber  { get; set; } //lượng người tham dự
+        public int RegistrationLimit   { get; set; } //giới hạn người tham dự
+        public string Slug             { get; set; }
+        public eCinemaStatus Status    { get; set; }
+        public Guid User_id            { get; set; }
+        public int Movie_id            { get; set; }
 
     }
 }

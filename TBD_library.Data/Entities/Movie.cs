@@ -8,11 +8,11 @@ namespace TBD_library.Data.Entities
 {
     public class Movie
     {
-        int Id           { get; set; }
-        string Name      { get; set; }
-        string Summary   { get; set; }
-        string Img       { get; set; }
-        string Trailer    { get; set; }
-        DateTime Time    { get; set; }
+        public int Id           { get; set; }
+        public string Name      { get; set; }
+        public string Summary   { get; set; }
+        public string Img       { get; set; }
+        public string Trailer    { get; set; }
+        public DateTime Time    { get; set; }
     }
 }

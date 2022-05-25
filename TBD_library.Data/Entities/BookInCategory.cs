@@ -8,8 +8,8 @@ namespace TBD_library.Data.Entities
 {
     public class BookInCategory
     {
-        int Book_id        { get; set;}
-        int BCategory_id   { get; set;}
+        public int Book_id        { get; set;}
+        public int BCategory_id   { get; set;}
 
     }
 }

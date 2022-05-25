@@ -8,8 +8,8 @@ namespace TBD_library.Data.Entities
 {
     public class PostInCategory
     {
-       int Post_id      { get; set; }
-       int Category_id  { get; set; }
+       public int Post_id      { get; set; }
+       public int Category_id  { get; set; }
 
     }
 }

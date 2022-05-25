@@ -8,8 +8,8 @@ namespace TBD_library.Data.Entities
 {
     public class MovieInCategory
     {
-        int Movie_id        { get; set; }
-        int MCategory_id    { get; set; }
+        public int Movie_id        { get; set; }
+        public int MCategory_id    { get; set; }
 
     }
 }

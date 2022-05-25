@@ -9,8 +9,9 @@ namespace TBD_library.Data.Entities
 {
     public class Room
     {
-        int BorrowRoom_id   { get; set; }
-        string RoomName     { get; set; }
-        eRoomStatus Status  { get; set; }
+        public int Id              { get; set; }
+        public string RoomName     { get; set; }
+        public eRoomStatus Status  { get; set; }
+        public int BorrowRoom_id { get; set; }
     }
 }

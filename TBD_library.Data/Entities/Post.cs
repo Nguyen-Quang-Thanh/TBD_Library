@@ -9,15 +9,16 @@ namespace TBD_library.Data.Entities
 {
     public class Post
     {
-        int Id              { get; set; }
-        string Title        { get; set; }
-        string Summary      { get; set; }
-        string Conten       { get; set; }
-        string Img          { get; set; }
-        DateTime Created_at { get; set; }
-        DateTime Updated_at { get; set; }
-        string Slug         { get; set; }
-        ePostStatus Status  { get; set; }
-        Guid User_id        { get; set; }
+        public int Id              { get; set; }
+        public string Title        { get; set; }
+        public string Summary      { get; set; }
+        public string Conten       { get; set; }
+        public string Img          { get; set; }
+        public DateTime Created_at { get; set; }
+        public DateTime Updated_at { get; set; }
+        public string Slug         { get; set; }
+        public int ViewCount       { get; set; }
+        public ePostStatus Status  { get; set; }
+        public Guid User_id        { get; set; }
     }
 }

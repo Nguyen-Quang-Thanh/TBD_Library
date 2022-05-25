@@ -9,17 +9,18 @@ namespace TBD_library.Data.Entities
 {
     public class Book
     {
-        int Id               { get; set; }
-        string Name          { get; set; }
-        string Description   { get; set; }
-        string Summary       { get; set; }
-        string Author        { get; set; }
-        string Publisher     { get; set; }
-        string Img           { get; set; }
-        DateTime Created_at  { get; set; }
-        eBookStatus Status   { get; set; }
-        string Slug          { get; set; }
-        Guid User_id         { get; set; }
-        int? BorrowBook_id   { get; set; }
+        public int Id               { get; set; }
+        public string Name          { get; set; }
+        public string Description   { get; set; }
+        public string Summary       { get; set; }
+        public string Author        { get; set; }
+        public string Publisher     { get; set; }
+        public string Img           { get; set; }
+        public DateTime Created_at  { get; set; }
+        public eBookStatus Status   { get; set; }
+        public int BorrowCount      { get; set; }
+        public string Slug          { get; set; }
+        public Guid User_id         { get; set; }
+        public int? BorrowBook_id   { get; set; }
     }                                   
 }
