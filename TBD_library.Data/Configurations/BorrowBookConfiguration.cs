@@ -20,6 +20,8 @@ namespace TBD_library.Data.Configurations
             builder.Property(x => x.Borrowed_time).IsRequired(false);
             builder.Property(x => x.GiveBack_date).IsRequired(false);
             builder.Property(x => x.Status).IsRequired().HasDefaultValue(eBorrowBookStatus.borrowing);
+
+            builder.HasOne(x => x.User).WithMany(x => x.BorrowBooks).HasForeignKey(x => x.User_id);
         }
     }
 }

@@ -19,5 +19,9 @@ namespace TBD_library.Data.Entities
         public Guid User_id            { get; set; }
         public int Movie_id            { get; set; }
 
+
+        public List<Registration> Registrations { get; set; }
+        public User User { get; set; }
+        public Movie Movie { get; set; }
     }
 }

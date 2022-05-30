@@ -17,6 +17,8 @@ namespace TBD_library.Data.Configurations
             builder.ToTable("Rooms");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.RoomName).IsRequired(false).IsUnicode();
+            builder.Property(x => x.Room_date).IsRequired();
+            builder.Property(x => x.SessionTime).IsRequired();
             builder.Property(x => x.Status).IsRequired(false);
 
         }

@@ -14,5 +14,8 @@ namespace TBD_library.Data.Entities
         public string Img       { get; set; }
         public string Trailer   { get; set; }
         public TimeSpan Time    { get; set; }
+
+        public List<Cinema> Cinemas { get; set; }
+        public List<MovieInCategory> MovieInCategories { get; set; }
     }
 }

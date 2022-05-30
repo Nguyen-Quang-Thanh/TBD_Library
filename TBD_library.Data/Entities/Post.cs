@@ -20,5 +20,9 @@ namespace TBD_library.Data.Entities
         public int ViewCount       { get; set; }
         public ePostStatus Status  { get; set; }
         public Guid User_id        { get; set; }
+
+        public User User { get; set; }
+        public List<PostInCategory> PostInCategories { set; get; }
+
     }
 }

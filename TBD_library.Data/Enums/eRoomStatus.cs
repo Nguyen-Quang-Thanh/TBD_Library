@@ -10,5 +10,6 @@ namespace TBD_library.Data.Enums
     {
         allowed,
         NoAllowed,
+        borrowed,
     }
 }
