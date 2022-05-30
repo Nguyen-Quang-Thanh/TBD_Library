@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TBD_library.Data.Entities
+{
+    public class MCategory
+    {
+        public int Id            { get; set; }
+        public string Title      { get; set; }
+        public string Description { get; set; }
+
+        public List<MovieInCategory> MovieInCategories { get; set; }
+    }
+}
