@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Entities\BorrowBook.cs~RF1c5c009b.TMP" />
     <None Remove="Entities\BorrowRoom.cs~RF3d6eb24d.TMP" />
   </ItemGroup>
 
