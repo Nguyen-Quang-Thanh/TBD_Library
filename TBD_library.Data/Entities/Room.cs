@@ -16,5 +16,6 @@ namespace TBD_library.Data.Entities
         // SessionTime phân đoạn thời gian ra 5 khoản ( 1,2 sáng 3,4 chiều 5 là tối)
         public int SessionTime     { get; set; }
         public eRoomStatus Status  { get; set; }
+        public List<BorrowInRoom> BorrowInRooms { get;set }
     }
 }

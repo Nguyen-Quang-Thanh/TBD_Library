@@ -16,5 +16,7 @@ namespace TBD_library.Data.Entities
         public eBorrowBookStatus Status{ get; set; }
         public Guid User_id            { get; set; }
 
+        public User User { get; set; }
+        public List<Book> Books { get; set; }
     }
 }

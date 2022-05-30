@@ -25,6 +25,9 @@ namespace TBD_library.Data.Configurations
             builder.Property(x => x.Slug).IsRequired(false);
             builder.Property(x => x.ViewCount).IsRequired().HasDefaultValue(0);
             builder.Property(x => x.Status).IsRequired(false);
+
+            builder.HasOne(x => x.User).WithMany(x => x.Posts).HasForeignKey(x => x.User_id);
+
         }
     }
 }

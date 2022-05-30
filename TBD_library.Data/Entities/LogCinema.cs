@@ -14,5 +14,7 @@ namespace TBD_library.Data.Entities
         public DateTime Watching_date     { get; set; }
         public TimeSpan Time              { get; set; }
         public int RegistrationNumber     { get; set; }
+
+        public List<LogRegistration> LogRegistrations { get; set; }
     }
 }

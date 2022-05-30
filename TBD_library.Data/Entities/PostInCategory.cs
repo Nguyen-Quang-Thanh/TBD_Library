@@ -11,5 +11,7 @@ namespace TBD_library.Data.Entities
        public int Post_id      { get; set; }
        public int Category_id  { get; set; }
 
+        public Post Post { get; set; }
+        public Category Category { get; set; }
     }
 }

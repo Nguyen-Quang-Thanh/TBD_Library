@@ -12,5 +12,6 @@ namespace TBD_library.Data.Entities
         public string Title      { get; set; }
         public string Description { get; set; }
 
+        public List<MovieInCategory> MovieInCategories { get; set; }
     }
 }

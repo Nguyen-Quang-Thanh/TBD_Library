@@ -14,5 +14,8 @@ namespace TBD_library.Data.Entities
          public eRegistrationStatus Status { get; set; }
          public int Cinema_id              { get; set; }
          public Guid User_id               { get; set; }
+
+        public User User { get; set; }
+        public Cinema Cinema { get; set; }
      }
 }

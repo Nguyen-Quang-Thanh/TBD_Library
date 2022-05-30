@@ -19,6 +19,9 @@ namespace TBD_library.Data.Configurations
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Registration_date).IsRequired().HasDefaultValue(DateTime.Now);
             builder.Property(x => x.Status).IsRequired().HasDefaultValue(eRegistrationStatus.partake);
+
+            builder.HasOne(x => x.User).WithMany(x => x.Registrations).HasForeignKey(x => x.User_id);
+            builder.HasOne(x => x.Cinema).WithMany(x => x.Registrations).HasForeignKey(x => x.Cinema_id);
         }
     }
 }

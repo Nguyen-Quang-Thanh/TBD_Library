@@ -16,6 +16,9 @@ namespace TBD_library.Data.Configurations
         {
             builder.ToTable("MovieInCategories");
             builder.HasKey(x => new {x.Movie_id , x.MCategory_id});
+
+            builder.HasOne(x => x.Movie).WithMany(x => x.MovieInCategories).HasForeignKey(x => x.Movie_id);
+            builder.HasOne(x => x.MCategory).WithMany(x => x.MovieInCategories).HasForeignKey(x => x.MCategory_id);
         }
     }
 }

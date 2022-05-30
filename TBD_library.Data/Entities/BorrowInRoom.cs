@@ -10,5 +10,8 @@ namespace TBD_library.Data.Entities
     {
         public int Borrow_id { get; set; }
         public int Room_id { get;set; }
+
+        public Room Room { get; set; }
+        public BorrowRoom BorrowRoom { get; set; }
     }
 }
