@@ -20,8 +20,6 @@ namespace TBD_library.Data.Configurations
             builder.Property(x => x.Email).IsRequired(false);
             builder.Property(x => x.Sdt).IsRequired(false);
             builder.Property(x => x.Registration_date).IsRequired(false);
-
-            builder.HasOne(x => x.LogCinema).WithMany(x => x.LogRegistrations).HasForeignKey(x => x.LogCinema_id);
         }
     }
 }

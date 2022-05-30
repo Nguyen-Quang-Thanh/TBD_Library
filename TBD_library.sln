@@ -5,9 +5,9 @@ VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TBD_library", "TBD_library\TBD_library.csproj", "{9268443F-9836-4472-B168-9F6CAE77C28A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TBD_library.Data", "TBD_library.Data\TBD_library.Data.csproj", "{FAD9EB8C-B89E-4081-9E1D-B8EE317D452C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TBD_library.Data", "TBD_library.Data\TBD_library.Data.csproj", "{FAD9EB8C-B89E-4081-9E1D-B8EE317D452C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TBD_library.Application", "TBD_library.Application\TBD_library.Application.csproj", "{87706F46-74BF-4760-81F8-45D947C49D64}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TBD_library.Application", "TBD_library.Application\TBD_library.Application.csproj", "{87706F46-74BF-4760-81F8-45D947C49D64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -11,8 +11,5 @@ namespace TBD_library.Data.Entities
         public int Movie_id        { get; set; }
         public int MCategory_id    { get; set; }
 
-
-        public Movie Movie { get; set; }
-        public  MCategory MCategory { get; set; }
     }
 }

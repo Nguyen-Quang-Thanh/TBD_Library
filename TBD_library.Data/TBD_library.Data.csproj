@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Entities\BorrowRoom.cs~RF19bfc299.TMP" />
     <None Remove="Entities\BorrowRoom.cs~RF3d6eb24d.TMP" />
   </ItemGroup>
 
@@ -21,9 +20,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
   </ItemGroup>
 
 </Project>

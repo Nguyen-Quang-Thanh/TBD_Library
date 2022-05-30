@@ -13,8 +13,5 @@ namespace TBD_library.Data.Entities
          public TimeSpan Time              { get; set; }
          public int ParticipantNumber      { get; set; } // số người tham gia
          public Guid User_id               { get; set; }
-
-        public List<BorrowInRoom> BorrowInRooms { get;set; }
-        public User Users { get; set; }
     }
 }

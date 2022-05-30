@@ -14,7 +14,5 @@ namespace TBD_library.Data.Entities
         public int Sdt                     { get; set; }
         public DateTime Registration_date  { get; set; }
         public int LogCinema_id            { get; set; }
-
-        public LogCinema LogCinema { get; set; }
     }
 }

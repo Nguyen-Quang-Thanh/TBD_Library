@@ -11,7 +11,5 @@ namespace TBD_library.Data.Entities
         public int Book_id        { get; set;}
         public int BCategory_id   { get; set;}
 
-        public Book Book { get; set;}
-        public BCategory BCategory { get; set;}
     }
 }

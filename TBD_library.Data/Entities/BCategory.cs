@@ -11,7 +11,5 @@ namespace TBD_library.Data.Entities
         public int Id              { get; set; }
         public string Title        { get; set; }
         public string Description  { get; set; }
-
-        public List<BookInCategory> BookInCategories { get; set; }
     }
 }

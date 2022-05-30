@@ -11,13 +11,10 @@ namespace TBD_library.Data.Entities
     {
         public int Id                  { get; set; }
         public DateTime Borrowed_date  { get; set; }
-        public TimeSpan Borrowed_time  { get; set; }
+        public DateTime Borrowed_time  { get; set; }
         public DateTime GiveBack_date  { get; set; }
         public eBorrowBookStatus Status{ get; set; }
         public Guid User_id            { get; set; }
-
-        public User User { get; set; } 
-        public List<Book> Books { get; set; }
 
     }
 }

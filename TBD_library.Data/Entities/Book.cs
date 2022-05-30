@@ -22,9 +22,5 @@ namespace TBD_library.Data.Entities
         public string Slug          { get; set; }
         public Guid User_id         { get; set; }
         public int? BorrowBook_id   { get; set; }
-
-        public User User { set; get; }
-        public BorrowBook BorrowBook { get; set; }
-        public List<BookInCategory> BookInCategories { get; set; }
     }                                   
 }

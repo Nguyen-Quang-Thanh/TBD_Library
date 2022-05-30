@@ -8,7 +8,7 @@ namespace TBD_library.Data.Enums
 {
     public enum eRegistrationStatus
     {
-        partake, // tham dự
-        abdicate,// không tham dự
+        partake,
+        abdicate,
     }
 }

@@ -23,9 +23,6 @@ namespace TBD_library.Data.Configurations
             builder.Property(x => x.RegistrationLimit).IsRequired(false);
             builder.Property(x => x.Slug).IsRequired(false);
             builder.Property(x => x.Status).IsRequired().HasDefaultValue(eCinemaStatus.allowed);
-
-            builder.HasOne(x => x.User).WithMany(x => x.Cinemas).HasForeignKey(x => x.User_id);
-            builder.HasOne(x => x.Movie).WithMany(x => x.Cinemas).HasForeignKey(x => x.Movie_id);
         }
     }
 }

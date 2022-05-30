@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TBD_library.Data.Configurations;
 using TBD_library.Data.Entities;
 
 namespace TBD_library.Data.EF
@@ -17,25 +16,7 @@ namespace TBD_library.Data.EF
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new BCategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new BookConfiguration());
-            modelBuilder.ApplyConfiguration(new BookInCategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new BorrowBookConfiguration());
-            modelBuilder.ApplyConfiguration(new BorrowRoomConfiguration());
-            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new CinemaConfiguration());
-            modelBuilder.ApplyConfiguration(new LogBorrowBookConfiguration());
-            modelBuilder.ApplyConfiguration(new LogCinemaConfiguration());
-            modelBuilder.ApplyConfiguration(new LogRegistrationConfiguration());
-            modelBuilder.ApplyConfiguration(new MCategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new MovieConfiguration());
-            modelBuilder.ApplyConfiguration(new MovieInCategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new PostConfiguration());
-            modelBuilder.ApplyConfiguration(new PostInCategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new RegistrationConfiguration());
-            modelBuilder.ApplyConfiguration(new RoomConfiguration());
-            modelBuilder.ApplyConfiguration(new BorrowInRoomConfiguration());
-            modelBuilder.ApplyConfiguration(new UserConfiguration());
+
         }
         public DbSet<User> Users { get; set; }
         
@@ -62,7 +43,6 @@ namespace TBD_library.Data.EF
 
         //Room faeture
         public DbSet<BorrowRoom> BorrowRooms { get; set; }
-        public DbSet<BorrowInRoom> BorrowInRooms { get; set; }
         public DbSet<Room> Rooms { get; set; }
     }
 }
