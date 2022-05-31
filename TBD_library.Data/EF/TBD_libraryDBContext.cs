@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TBD_library.Data.Configurations;
 using TBD_library.Data.Entities;
+using TBD_library.Data.Extention;
 
 namespace TBD_library.Data.EF
 {
@@ -36,6 +37,9 @@ namespace TBD_library.Data.EF
             modelBuilder.ApplyConfiguration(new RegistrationConfiguration());
             modelBuilder.ApplyConfiguration(new RoomConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
+
+            //data seeding
+            ModelBuilderExtensions.Seed(modelBuilder);
         }
         public DbSet<User> Users { get; set; }
         
