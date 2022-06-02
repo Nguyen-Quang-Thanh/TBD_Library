@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using TBD_library.Data.Extention;
 
 namespace TBD_library.Data.EF
 {
-    public class TBD_libraryDBContext : DbContext
+    public class TBD_libraryDBContext : IdentityDbContext
     {
         public TBD_libraryDBContext(DbContextOptions options) : base(options)
         {
