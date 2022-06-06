@@ -18,10 +18,10 @@ namespace TBD_library.Data.Configurations
             builder.HasKey(x => x.Id);
             builder.Property(x => x.FullName).IsRequired().IsUnicode();
             builder.Property(x => x.Email).IsRequired(false);
-            builder.Property(x => x.Sdt).IsRequired(false);
-            builder.Property(x => x.Registration_date).IsRequired(false);
+            builder.Property(x => x.Sdt).IsRequired();
+            builder.Property(x => x.Registration_date).IsRequired();
 
-            builder.HasOne(x => x.LogCinema).WithMany(x => x.LogRegistrations).HasForeignKey(x => x.LogCinema_id);
+            builder.HasOne(x => x.LogCinema).WithMany(x => x.LogRegistrations).HasForeignKey(x => x.LogCinema_id).OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

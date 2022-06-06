@@ -16,6 +16,11 @@ namespace TBD_library.Data.Configurations
         {
             builder.ToTable("Users");
             builder.HasKey(x => x.Id);
+
+            builder.Property(x => x.StudentCode).IsRequired();
+            builder.Property(x => x.status).IsRequired().HasDefaultValue(eUserStatus.allowed);
+            builder.Property(x => x.Majors).IsRequired(false);
+            builder.Property(x => x.ShouldLock).IsRequired(false);
         }
     }
 }

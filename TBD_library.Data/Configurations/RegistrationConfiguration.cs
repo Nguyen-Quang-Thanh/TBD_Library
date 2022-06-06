@@ -20,8 +20,8 @@ namespace TBD_library.Data.Configurations
             builder.Property(x => x.Registration_date).IsRequired().HasDefaultValue(DateTime.Now);
             builder.Property(x => x.Status).IsRequired().HasDefaultValue(eRegistrationStatus.partake);
 
-            builder.HasOne(x => x.User).WithMany(x => x.Registrations).HasForeignKey(x => x.User_id);
-            builder.HasOne(x => x.Cinema).WithMany(x => x.Registrations).HasForeignKey(x => x.Cinema_id);
+            builder.HasOne(x => x.User).WithMany(x => x.Registrations).HasForeignKey(x => x.User_id).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(x => x.Cinema).WithMany(x => x.Registrations).HasForeignKey(x => x.Cinema_id).OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

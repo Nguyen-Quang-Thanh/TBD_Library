@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ using TBD_library.Data.Extention;
 
 namespace TBD_library.Data.EF
 {
-    public class TBD_libraryDBContext : IdentityDbContext
+    public class TBD_libraryDBContext : IdentityDbContext<User,Role,Guid>
     {
         public TBD_libraryDBContext(DbContextOptions options) : base(options)
         {
@@ -38,6 +39,13 @@ namespace TBD_library.Data.EF
             modelBuilder.ApplyConfiguration(new RegistrationConfiguration());
             modelBuilder.ApplyConfiguration(new RoomConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
+
+            modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("UserClaims").HasKey(x => x.UserId);
+            modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("UserRoles").HasKey(x => x.UserId);
+            modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("UserLogins").HasKey(x=>x.UserId);
+
+            modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("RoleClaims");
+            modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("RoleTokens").HasKey(x => x.UserId);
 
             //data seeding
             ModelBuilderExtensions.Seed(modelBuilder);

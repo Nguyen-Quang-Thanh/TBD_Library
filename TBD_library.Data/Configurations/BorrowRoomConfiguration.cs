@@ -17,8 +17,8 @@ namespace TBD_library.Data.Configurations
             builder.ToTable("BorrowRooms");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Borrow_date).IsRequired().HasDefaultValue(DateTime.Now);
-            builder.Property(x => x.Time).IsRequired(false);
-            builder.Property(x => x.ParticipantNumber).IsRequired(false);
+            builder.Property(x => x.Time).IsRequired();
+            builder.Property(x => x.ParticipantNumber).IsRequired().HasDefaultValue(0);
 
             builder.HasOne(x => x.User).WithMany(x => x.BorrowRooms).HasForeignKey(x => x.User_id);
 

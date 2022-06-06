@@ -21,12 +21,12 @@ namespace TBD_library.Data.Configurations
             builder.Property(x => x.Conten).IsRequired().IsUnicode();
             builder.Property(x => x.Img).IsRequired(false);
             builder.Property(x => x.Created_at).IsRequired().HasDefaultValue(DateTime.Now);
-            builder.Property(x => x.Updated_at).IsRequired(false);
+            builder.Property(x => x.Updated_at).IsRequired();
             builder.Property(x => x.Slug).IsRequired(false);
             builder.Property(x => x.ViewCount).IsRequired().HasDefaultValue(0);
-            builder.Property(x => x.Status).IsRequired(false);
+            builder.Property(x => x.Status).IsRequired();
 
-            builder.HasOne(x => x.User).WithMany(x => x.Posts).HasForeignKey(x => x.User_id);
+            builder.HasOne(x => x.User).WithMany(x => x.Posts).HasForeignKey(x => x.User_id).OnDelete(DeleteBehavior.Restrict);
 
         }
     }

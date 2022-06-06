@@ -10,15 +10,13 @@ using TBD_library.Data.Enums;
 
 namespace TBD_library.Data.Configurations
 {
-    public class RoomConfiguration : IEntityTypeConfiguration<Room>
+    public  class RoleConfiguration : IEntityTypeConfiguration<Role>
     {
-        public void Configure(EntityTypeBuilder<Room> builder)
+        public void Configure(EntityTypeBuilder<Role> builder)
         {
-            builder.ToTable("Rooms");
+            builder.ToTable("Roles");
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.RoomName).IsRequired(false).IsUnicode();
-            builder.Property(x => x.Status).IsRequired();
-
+            builder.Property(x => x.Discription).IsRequired().IsUnicode().HasMaxLength(200);
         }
     }
 }

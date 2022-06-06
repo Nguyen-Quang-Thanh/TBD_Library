@@ -17,9 +17,9 @@ namespace TBD_library.Data.Configurations
             builder.ToTable("LogCinemas");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.MovieName).IsRequired().IsUnicode();
-            builder.Property(x => x.Watching_date).IsRequired(false);
-            builder.Property(x => x.Time).IsRequired(false);
-            builder.Property(x => x.RegistrationNumber).IsRequired(false);
+            builder.Property(x => x.Watching_date).IsRequired();
+            builder.Property(x => x.Time).IsRequired();
+            builder.Property(x => x.RegistrationNumber).IsRequired();
         }
     }
 }

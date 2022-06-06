@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace TBD_library.Data.EF
 {
-    internal class TBD_libraryDbContextFactory : IDesignTimeDbContextFactory<TBD_libraryDBContext>
+    public class TBD_libraryDbContextFactory : IDesignTimeDbContextFactory<TBD_libraryDBContext>
     {
         public TBD_libraryDBContext CreateDbContext(string[] args)
         {
@@ -17,7 +17,7 @@ namespace TBD_library.Data.EF
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
                 .Build();
-            var connectionString = configuration.GetConnectionString("TBD_connectiton");
+            var connectionString = "Data Source=.;Initial Catalog=TBD_library;Integrated Security=True"; //configuration.GetConnectionString("DefaultConnection");
 
             var optionsBuilder = new DbContextOptionsBuilder<TBD_libraryDBContext>();
             optionsBuilder.UseSqlServer(connectionString);
