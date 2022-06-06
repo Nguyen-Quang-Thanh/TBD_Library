@@ -12,7 +12,7 @@ using TBD_library.Data.EF;
 namespace TBD_library.Data.Migrations
 {
     [DbContext(typeof(TBD_libraryDBContext))]
-    [Migration("20220606012221_data")]
+    [Migration("20220606032247_data")]
     partial class data
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -189,7 +189,7 @@ namespace TBD_library.Data.Migrations
                     b.Property<DateTime>("Created_at")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 6, 6, 8, 22, 20, 68, DateTimeKind.Local).AddTicks(3145));
+                        .HasDefaultValue(new DateTime(2022, 6, 6, 10, 22, 46, 390, DateTimeKind.Local).AddTicks(3083));
 
                     b.Property<string>("Description")
                         .IsUnicode(true)
@@ -243,7 +243,7 @@ namespace TBD_library.Data.Migrations
                             Name = "hành trình về phương đông",
                             Status = 0,
                             Summary = "sach hay",
-                            User_id = new Guid("00000000-0000-0000-0000-000000000000")
+                            User_id = new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575")
                         },
                         new
                         {
@@ -256,7 +256,7 @@ namespace TBD_library.Data.Migrations
                             Name = "tôi tài giỏi bạn cũng thế",
                             Status = 1,
                             Summary = "sach hay",
-                            User_id = new Guid("00000000-0000-0000-0000-000000000000")
+                            User_id = new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575")
                         });
                 });
 
@@ -298,7 +298,7 @@ namespace TBD_library.Data.Migrations
                     b.Property<DateTime>("Borrowed_date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 6, 6, 8, 22, 20, 70, DateTimeKind.Local).AddTicks(1923));
+                        .HasDefaultValue(new DateTime(2022, 6, 6, 10, 22, 46, 392, DateTimeKind.Local).AddTicks(2435));
 
                     b.Property<TimeSpan>("Borrowed_time")
                         .HasColumnType("time");
@@ -328,7 +328,7 @@ namespace TBD_library.Data.Migrations
                             Borrowed_time = new TimeSpan(0, 0, 0, 0, 0),
                             GiveBack_date = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = 1,
-                            User_id = new Guid("00000000-0000-0000-0000-000000000000")
+                            User_id = new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575")
                         });
                 });
 
@@ -365,7 +365,7 @@ namespace TBD_library.Data.Migrations
                     b.Property<DateTime>("Borrow_date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 6, 6, 8, 22, 20, 71, DateTimeKind.Local).AddTicks(4942));
+                        .HasDefaultValue(new DateTime(2022, 6, 6, 10, 22, 46, 393, DateTimeKind.Local).AddTicks(5447));
 
                     b.Property<int>("ParticipantNumber")
                         .ValueGeneratedOnAdd()
@@ -391,7 +391,7 @@ namespace TBD_library.Data.Migrations
                             Borrow_date = new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local),
                             ParticipantNumber = 0,
                             Time = new TimeSpan(0, 2, 30, 0, 0),
-                            User_id = new Guid("00000000-0000-0000-0000-000000000000")
+                            User_id = new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575")
                         });
                 });
 
@@ -438,7 +438,7 @@ namespace TBD_library.Data.Migrations
                     b.Property<DateTime>("Create_at")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 6, 6, 8, 22, 20, 72, DateTimeKind.Local).AddTicks(260));
+                        .HasDefaultValue(new DateTime(2022, 6, 6, 10, 22, 46, 394, DateTimeKind.Local).AddTicks(846));
 
                     b.Property<int>("Movie_id")
                         .HasColumnType("int");
@@ -482,7 +482,7 @@ namespace TBD_library.Data.Migrations
                             RegistrationLimit = 35,
                             RegistrationNumber = 1,
                             Status = 0,
-                            User_id = new Guid("00000000-0000-0000-0000-000000000000"),
+                            User_id = new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575"),
                             watching_date = new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local)
                         });
                 });
@@ -728,7 +728,7 @@ namespace TBD_library.Data.Migrations
                     b.Property<DateTime>("Created_at")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 6, 6, 8, 22, 20, 74, DateTimeKind.Local).AddTicks(6415));
+                        .HasDefaultValue(new DateTime(2022, 6, 6, 10, 22, 46, 396, DateTimeKind.Local).AddTicks(5597));
 
                     b.Property<string>("Img")
                         .HasColumnType("nvarchar(max)");
@@ -776,7 +776,7 @@ namespace TBD_library.Data.Migrations
                             Summary = "mẫu ban đầu",
                             Title = "blog mẫu",
                             Updated_at = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            User_id = new Guid("00000000-0000-0000-0000-000000000000"),
+                            User_id = new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575"),
                             ViewCount = 0
                         });
                 });
@@ -817,7 +817,7 @@ namespace TBD_library.Data.Migrations
                     b.Property<DateTime>("Registration_date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 6, 6, 8, 22, 20, 76, DateTimeKind.Local).AddTicks(107));
+                        .HasDefaultValue(new DateTime(2022, 6, 6, 10, 22, 46, 397, DateTimeKind.Local).AddTicks(8568));
 
                     b.Property<int>("Status")
                         .ValueGeneratedOnAdd()
@@ -842,7 +842,7 @@ namespace TBD_library.Data.Migrations
                             Cinema_id = 1,
                             Registration_date = new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local),
                             Status = 0,
-                            User_id = new Guid("00000000-0000-0000-0000-000000000000")
+                            User_id = new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575")
                         });
                 });
 
@@ -873,7 +873,7 @@ namespace TBD_library.Data.Migrations
                         new
                         {
                             Id = new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575"),
-                            ConcurrencyStamp = "1d006247-c254-421b-9b55-ff1cb255a45c",
+                            ConcurrencyStamp = "288c4f11-16ea-4682-9c8c-521213f56540",
                             Discription = "được phép thay đổi và chỉnh sửa mọi tài nguyên hệ thống",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -987,14 +987,14 @@ namespace TBD_library.Data.Migrations
                         {
                             Id = new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "176139f7-09da-479b-9924-ef7544af1fb1",
+                            ConcurrencyStamp = "4a82ae4c-06f6-455e-b52e-a743dff10382",
                             Email = "quangthanhn485@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Majors = "công nghệ thông tin",
                             NormalizedEmail = "quangthanhn485@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAhgQdYPDFZcIJpSQpVc2bdOkmYq1DQSG296aytX7G8bfu2FWtk1WdyXzdMMuQsdYQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHTmyqGsfbdBP7+/wFSlxHoGghn+j81ZI3Ns2EEaabqKyUhqnwQs4yhNHxVUXryK+A==",
                             PhoneNumber = "0373045581",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",

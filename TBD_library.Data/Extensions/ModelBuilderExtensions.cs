@@ -19,6 +19,10 @@ namespace TBD_library.Data.Extention
             TimeSpan timeBorrowRoom = new System.TimeSpan(0, 2, 30, 0);
             TimeSpan timeWachingMovie = new System.TimeSpan(5, 0, 0, 0);
             TimeSpan timeMovie = new System.TimeSpan(0, 2, 0, 0);
+
+            const string ADMIN_ID = "a18be9c0-aa65-4af8-bd17-00bd9344e575";
+            // any guid, but nothing is against to use the same one
+            const string ROLE_ID = ADMIN_ID;
             // about post
             modelBuilder.Entity<Post>().HasData(
                 new Post() { 
@@ -29,6 +33,7 @@ namespace TBD_library.Data.Extention
                     Created_at = aDateTime.Date,
                     ViewCount = 0,
                     Status = ePostStatus.activity,
+                    User_id = new Guid(ADMIN_ID),
                 }
             );
             modelBuilder.Entity<Category>().HasData(
@@ -51,6 +56,7 @@ namespace TBD_library.Data.Extention
                     Id = 1,
                     Borrowed_date = aDateTime.Date,
                     Status = eBorrowBookStatus.borrowing,
+                    User_id = new Guid(ADMIN_ID),
                 });
             // about books
             modelBuilder.Entity<Book>().HasData(
@@ -64,6 +70,7 @@ namespace TBD_library.Data.Extention
                     Img = "hanh-trinh-ve-phuong-dong.jpg",
                     Created_at = aDateTime.Date,
                     BorrowBook_id = 1,
+                    User_id = new Guid(ADMIN_ID),
                     Status = eBookStatus.Borrwed,
                     BorrowCount = 0,
                 },
@@ -78,8 +85,9 @@ namespace TBD_library.Data.Extention
                     Created_at = aDateTime.Date,
                     Status = eBookStatus.NotBorrwed,
                     BorrowCount = 0,
+                    User_id = new Guid(ADMIN_ID),
                 }
-            ) ;
+            ) ; 
             modelBuilder.Entity<BCategory>().HasData(
                 new BCategory()
                 {
@@ -124,6 +132,7 @@ namespace TBD_library.Data.Extention
                     Id = 1,
                     Borrow_date = aDateTime.Date,
                     Time = timeBorrowRoom,
+                    User_id = new Guid(ADMIN_ID),
                 }
             );
             modelBuilder.Entity<BorrowInRoom>().HasData(
@@ -204,6 +213,7 @@ namespace TBD_library.Data.Extention
                     RegistrationLimit = 35,
                     Status = eCinemaStatus.allowed,
                     Movie_id = 2 ,
+                    User_id = new Guid(ADMIN_ID),
                 }
             );
             modelBuilder.Entity<Registration>().HasData(
@@ -213,11 +223,9 @@ namespace TBD_library.Data.Extention
                     Registration_date = aDateTime.Date,
                     Status = eRegistrationStatus.partake,
                     Cinema_id =1 ,
+                    User_id = new Guid(ADMIN_ID),
                 }
             );
-            const string ADMIN_ID = "a18be9c0-aa65-4af8-bd17-00bd9344e575";
-            // any guid, but nothing is against to use the same one
-            const string ROLE_ID = ADMIN_ID;
             modelBuilder.Entity<Role>().HasData(new Role
             {
                 Id = new Guid(ROLE_ID),
