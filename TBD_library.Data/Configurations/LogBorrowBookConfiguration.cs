@@ -17,9 +17,9 @@ namespace TBD_library.Data.Configurations
         {
             builder.ToTable("LogBorrowBooks");
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Borrowed_date).IsRequired(false);
+            builder.Property(x => x.Borrowed_date).IsRequired();
             builder.Property( x=> x.Email).IsRequired(false);
-            builder.Property( x=> x.Sdt).IsRequired(false);
+            builder.Property( x=> x.Sdt).IsRequired();
             builder.Property( x=> x.NameBook).IsRequired(false).IsUnicode();
             builder.Property(x => x.Status).IsRequired(false);
         }
