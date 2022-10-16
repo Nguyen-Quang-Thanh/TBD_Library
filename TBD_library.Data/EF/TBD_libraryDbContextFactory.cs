@@ -17,7 +17,7 @@ namespace TBD_library.Data.EF
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
                 .Build();
-            var connectionString = "Data Source=.;Initial Catalog=TBD_library;Integrated Security=True"; //configuration.GetConnectionString("DefaultConnection");
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
 
             var optionsBuilder = new DbContextOptionsBuilder<TBD_libraryDBContext>();
             optionsBuilder.UseSqlServer(connectionString);
