@@ -1,9 +1,26 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="BookService\Dtos\" />
+    <Folder Include="BookService\Interface\" />
+    <Folder Include="BookService\Service\" />
+    <Folder Include="MovieService\Dtos\" />
+    <Folder Include="MovieService\Interface\" />
+    <Folder Include="MovieService\Service\" />
+    <Folder Include="PostService\Interface\" />
+    <Folder Include="RoomServer\Dtos\" />
+    <Folder Include="RoomServer\Interface\" />
+    <Folder Include="RoomServer\Service\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TBD_library.Data\TBD_library.Data.csproj" />
+  </ItemGroup>
 
 </Project>
