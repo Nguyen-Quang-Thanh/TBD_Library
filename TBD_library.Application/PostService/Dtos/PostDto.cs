@@ -7,7 +7,7 @@ using TBD_library.Data.Enums;
 
 namespace TBD_library.Application.Catalog.Dtos
 {
-    public class Post
+    public class PostDto
     {
         private int id;
         private String title;
@@ -20,9 +20,9 @@ namespace TBD_library.Application.Catalog.Dtos
         private ePostStatus status;
         private int userId;
 
-        public Post() { }
+        public PostDto() { }
 
-        public Post(int id, string title, string summary, string content, string img, DateTime create_at, DateTime update_at, int viewCount, ePostStatus status, int userId)
+        public PostDto(int id, string title, string summary, string content, string img, DateTime create_at, DateTime update_at, int viewCount, ePostStatus status, int userId)
         {
             this.id = id;
             this.title = title;
