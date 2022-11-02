@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TBD_library.Data.Entities;
 using TBD_library.Data.Enums;
 
 namespace TBD_library.Application.Catalog.Dtos
@@ -18,11 +19,12 @@ namespace TBD_library.Application.Catalog.Dtos
         private DateTime update_at;
         private int viewCount;
         private ePostStatus status;
-        private int userId;
+        private Guid userId;
+        private List<string> categoryNameList;
 
         public PostDto() { }
 
-        public PostDto(int id, string title, string summary, string content, string img, DateTime create_at, DateTime update_at, int viewCount, ePostStatus status, int userId)
+        public PostDto(int id, string title, string summary, string content, string img, DateTime create_at, DateTime update_at, int viewCount, ePostStatus status, Guid userId , List<string> category)
         {
             this.id = id;
             this.title = title;
@@ -34,6 +36,8 @@ namespace TBD_library.Application.Catalog.Dtos
             this.viewCount = viewCount;
             this.status = status;
             this.userId = userId;
+            this.categoryNameList = category;
+
         }
 
         public int Id { get => id; set => id = value; }
@@ -45,6 +49,7 @@ namespace TBD_library.Application.Catalog.Dtos
         public DateTime Update_at { get => update_at; set => update_at = value; }
         public int ViewCount { get => viewCount; set => viewCount = value; }
         public ePostStatus Status { get => status; set => status = value; }
-        public int UserId { get => userId; set => userId = value; }
+        public Guid UserId { get => userId; set => userId = value; }
+        public List<string> CategoryListName { get => categoryNameList; set => categoryNameList = value; }
     }
 }

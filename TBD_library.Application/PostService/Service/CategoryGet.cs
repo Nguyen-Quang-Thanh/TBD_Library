@@ -68,5 +68,17 @@ namespace TBD_library.Application.PostService.Service
             }
             return id;
         }
+        public string getTitleById(int id)
+        {
+            var title = dbContext.Categories.Where(x => x.Id.Equals(id)).Select(x => x.Title).FirstOrDefault();
+            if (title != null)
+            {
+                return title;
+            }
+            else
+            {
+                throw new Exception("don't find");
+            }
+        }
     }
 }
