@@ -8,9 +8,10 @@ using TBD_library.Application.PostService.Dtos;
 
 namespace TBD_library.Application.PostService.Interface
 {
-    internal interface IPostGet
+    public interface IPostGet
     {
-        Task<List<PostDto>> getAllPostList();
-        Task<int> getIdByCreate_at();
+        List<PostDto> getAllPost();
+        List<PostDto> getPostListById(int id);
+        int getIdByTitle(string title);
     }
 }

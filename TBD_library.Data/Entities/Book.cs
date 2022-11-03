@@ -21,7 +21,7 @@ namespace TBD_library.Data.Entities
         public int BorrowCount { get; set; }
         public string Slug { get; set; }
         public Guid User_id { get; set; }
-        public int? BorrowBook_id { get; set; }
+        public int BorrowBook_id { get; set; }
 
         public User User { get; set; }
         public BorrowBook BorrowBook { get; set; }

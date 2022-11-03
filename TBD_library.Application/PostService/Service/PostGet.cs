@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TBD_library.Application.Catalog.Dtos;
+using TBD_library.Application.PostService.Interface;
 using TBD_library.Application.PostService.Service;
 using TBD_library.Data.EF;
 
 namespace TBD_library.Application.PostService.service
 {
-    public class PostGet
+    public class PostGet : IPostGet
     {
         private readonly TBD_libraryDBContext dbContext;
         CategoryGet getCategory = new CategoryGet();
@@ -22,7 +23,7 @@ namespace TBD_library.Application.PostService.service
                 foreach (var item in post)
                 {
                     postList.Add(new PostDto(item.Id, item.Title, item.Summary, item.Conten, item.Img,
-                                            item.Created_at, item.Updated_at, item.ViewCount,item.Status, item.User_id,
+                                            item.Created_at, item.Updated_at, item.ViewCount, item.Status, item.User_id,
                                             getCategory.getAllTitleListById(item.PostInCategories.Select(x => x.Category_id).FirstOrDefault())));
                 }
             }
@@ -36,9 +37,9 @@ namespace TBD_library.Application.PostService.service
         {
             List<PostDto> postList = new List<PostDto>();
             var post = dbContext.Posts.Where(x => x.Id.Equals(id)).Select(x => x);
-            if(post != null)
+            if (post != null)
             {
-                foreach(var item in post)
+                foreach (var item in post)
                 {
                     postList.Add(new PostDto(item.Id, item.Title, item.Summary, item.Conten, item.Img,
                                         item.Created_at, item.Updated_at, item.ViewCount, item.Status, item.User_id,
@@ -49,11 +50,11 @@ namespace TBD_library.Application.PostService.service
         }
         public int getIdByTitle(string title)
         {
-            int id = 0; 
+            int id = 0;
             var idPost = getAllPost().Where(x => x.Title == title).Select(x => x.Id);
-            if(idPost != null)
+            if (idPost != null)
             {
-                foreach(var item in idPost)
+                foreach (var item in idPost)
                 {
                     id = item;
                 }
