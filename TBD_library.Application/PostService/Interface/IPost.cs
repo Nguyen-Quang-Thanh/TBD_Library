@@ -8,7 +8,7 @@ using TBD_library.Application.PostService.Dtos;
 
 namespace TBD_library.Application.PostService.Interface
 {
-    public interface IPostGet
+    public interface IPost
     {
         List<PostDto> getAllPost();
         List<PostDto> getPostListById(int id);

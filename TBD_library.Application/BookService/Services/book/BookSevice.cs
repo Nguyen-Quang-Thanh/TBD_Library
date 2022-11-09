@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TBD_library.Application.BookService.Dtos;
-using TBD_library.Application.BookService.Services;
+using TBD_library.Application.BookService.Interfaces;
+using TBD_library.Application.BookService.Services.borrow;
 using TBD_library.Application.UserService.Services;
 using TBD_library.Data.EF;
 using TBD_library.Data.Enums;
 
-namespace TBD_library.Application.BookService.Service
+namespace TBD_library.Application.BookService.Services.book
 {
-    public class BookGet
+    public class BookSevice : BookCurd, IBook
     {
         private GetUser getUser = new GetUser();
         private readonly TBD_libraryDBContext dbContext;
-        private GetBorrowBook getBorrowBook = new GetBorrowBook();
-
-        public List<BookDto> getAllBooks()
+        private BorrowService borrowService = new BorrowService();
+        public List<BookDto> getAll()
         {
             List<BookDto> bookList = new List<BookDto>();
             var books = dbContext.Books.Select(x => x);
@@ -27,7 +27,7 @@ namespace TBD_library.Application.BookService.Service
                 {
                     bookList.Add(new BookDto(item.Id, item.Name, item.Description, item.Author, item.Publisher,
                                     item.Img, item.Created_at, item.Status, item.BorrowCount, getUser.getUserNameById(item.User_id),
-                                    getBorrowBook.getBorrowStudentById(item.BorrowBook_id)));
+                                    borrowService.getStudentById(item.BorrowBook_id)));
                 }
             }
             else
@@ -36,7 +36,7 @@ namespace TBD_library.Application.BookService.Service
             }
             return bookList;
         }
-        public string getNameBookById(int id)
+        public string getNameById(int id)
         {
             string name = "";
             var nameBook = dbContext.Books.Where(x => x.Id == id).Select(x => x.Name);
@@ -53,7 +53,7 @@ namespace TBD_library.Application.BookService.Service
             }
             return name;
         }
-        public List<string> getAllNameBook()
+        public List<string> getAllName()
         {
             List<string> nameList = new List<string>();
             var names = dbContext.Books.Select(x => x.Name);
@@ -70,39 +70,18 @@ namespace TBD_library.Application.BookService.Service
             }
             return nameList;
         }
-        public List<string> getNameAllNotBorrowBook()
+        public List<BookDto> getAllByName(string name)
         {
-            List<string> nameList = new List<string>();
-            var names = dbContext.Books.Where(x => x.Status.Equals(eBookStatus.NotBorrwed)).Select(x => x.Name);
+            List<BookDto> books = new List<BookDto>();
+            var names = dbContext.Books.Select(x => x).Where(x => x.Name.Equals(name));
             if (names != null)
             {
                 foreach (var item in names)
                 {
-                    nameList.Add(item);
+                    books.Add(new BookDto(item.Id, item.Name, item.Description, item.Author, item.Publisher, item.Img, item.Created_at, item.Status, item.BorrowCount, getUser.getUserNameById(item.User_id), borrowService.getStudentById(item.BorrowBook_id)));
                 }
             }
-            else
-            {
-                throw new Exception("List name not borrow book is empty");
-            }
-            return nameList;
-        }
-        public List<string> getNameAllBorrowBook()
-        {
-            List<string> nameList = new List<string>();
-            var names = dbContext.Books.Where(x => x.Status.Equals(eBookStatus.Borrwed)).Select(x => x.Name);
-            if (names != null)
-            {
-                foreach (var item in names)
-                {
-                    nameList.Add(item);
-                }
-            }
-            else
-            {
-                throw new Exception("List name borrow book is empty");
-            }
-            return nameList;
+            return books;
         }
     }
 }

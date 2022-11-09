@@ -9,7 +9,7 @@ namespace TBD_library.Application.UserService.Services
 {
     public class GetUser
     {
-        private readonly TBD_libraryDBContext dbContext;
+        public readonly TBD_libraryDBContext dbContext;
         public string getUserNameById(Guid id)
         {
             string name ="";

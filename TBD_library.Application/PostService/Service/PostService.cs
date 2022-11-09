@@ -10,10 +10,10 @@ using TBD_library.Data.EF;
 
 namespace TBD_library.Application.PostService.service
 {
-    public class PostGet : IPostGet
+    public class PostService : PostCurd , IPost
     {
         private readonly TBD_libraryDBContext dbContext;
-        CategoryGet getCategory = new CategoryGet();
+        CategoryService getCategory = new CategoryService();
         public List<PostDto> getAllPost()
         {
             List<PostDto> postList = new List<PostDto>();

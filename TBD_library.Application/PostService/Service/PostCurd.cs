@@ -16,7 +16,7 @@ namespace TBD_library.Application.PostService.service
     public class PostCurd
     {
         private readonly TBD_libraryDBContext dbContext;
-        CategoryGet getCategory = new CategoryGet();
+        CategoryService getCategory = new CategoryService();
         public async Task<int> create(PostDto postDto)
         {
             var post = new Post
@@ -44,23 +44,23 @@ namespace TBD_library.Application.PostService.service
         }
         public async Task<int> update(PostDto postDto)
         {
-            var post = await dbContext.Posts.FirstOrDefaultAsync(x => x.Id == postDto.Id);
+            var post = await dbContext.Posts.FirstOrDefaultAsync(x => x.Id.Equals(postDto.Id));
             if (post != null)
             {
                 post.Title = postDto.Title;
                 post.Summary = postDto.Summary;
                 post.Conten = postDto.Content;
                 post.Img = postDto.Img;
-                postDto.Update_at = DateTime.Now;
+                post.Updated_at = DateTime.Now;
                 post.Status = post.Status;
-                foreach (var item in postDto.CategoryListName)
+/*                foreach (var item in postDto.CategoryListName)
                 {
                     post.PostInCategories.Add(
                     new PostInCategory()
                     {
                         Category_id = getCategory.getIdByTitle(item),
                     });
-                }
+                }*/
                 dbContext.UpdateRange(post);
             }
             else

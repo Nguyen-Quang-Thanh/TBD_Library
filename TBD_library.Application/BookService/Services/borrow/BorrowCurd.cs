@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TBD_library.Application.RoomServer.Service
+namespace TBD_library.Application.BookService.Services.borrow
 {
-    internal class RoomGet
+    public class BorrowCurd
     {
     }
 }

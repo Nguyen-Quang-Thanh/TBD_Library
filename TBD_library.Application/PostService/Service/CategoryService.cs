@@ -10,7 +10,7 @@ using TBD_library.Data.EF;
 
 namespace TBD_library.Application.PostService.Service
 {
-    public class CategoryGet : ICategoryGet
+    public class CategoryService : CategoryCrud
     {
         private readonly TBD_libraryDBContext dbContext;
         public List<CategoryDto> getAllList()

@@ -7,11 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="BookService\Interfaces\" />
     <Folder Include="MovieService\Dtos\" />
     <Folder Include="MovieService\Interface\" />
     <Folder Include="MovieService\Service\" />
-    <Folder Include="PostService\Interface\" />
     <Folder Include="RoomService\Interface\" />
     <Folder Include="UserService\Interfaces\" />
   </ItemGroup>

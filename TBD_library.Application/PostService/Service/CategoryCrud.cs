@@ -37,6 +37,7 @@ namespace TBD_library.Application.PostService.Service
                 category.Title = categoryDto.Title;
                 category.Description = categoryDto.Description;
             }
+            dbContext.Categories.UpdateRange(category);
             return await dbContext.SaveChangesAsync();
         }
 

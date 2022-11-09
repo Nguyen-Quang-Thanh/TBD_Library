@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 
 namespace TBD_library.Application.PostService.Interface
 {
-    public interface ICategoryGet
+    public interface ICategory
     {
         List<CategoryDto> getAllList();
         int getIdByTitle(String title);

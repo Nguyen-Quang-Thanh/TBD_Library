@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TBD_library.Application.BookService.Service
+namespace TBD_library.Application.BookService.Interfaces
 {
-    internal class BookCurd
+    public class IBCategoty
     {
     }
 }
