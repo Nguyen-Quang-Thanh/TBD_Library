@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TBD_library.Data.Migrations
 {
-    public partial class data : Migration
+    public partial class TBD_Db : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -269,14 +269,12 @@ namespace TBD_library.Data.Migrations
                         name: "FK_MovieInCategories_MCategories_MCategory_id",
                         column: x => x.MCategory_id,
                         principalTable: "MCategories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_MovieInCategories_Movies_Movie_id",
                         column: x => x.Movie_id,
                         principalTable: "Movies",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -285,7 +283,7 @@ namespace TBD_library.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Borrowed_date = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 6, 6, 10, 22, 46, 392, DateTimeKind.Local).AddTicks(2435)),
+                    Borrowed_date = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 11, 9, 16, 52, 12, 396, DateTimeKind.Local).AddTicks(8233)),
                     Borrowed_time = table.Column<TimeSpan>(type: "time", nullable: false),
                     GiveBack_date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false, defaultValue: 1),
@@ -308,7 +306,7 @@ namespace TBD_library.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Borrow_date = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 6, 6, 10, 22, 46, 393, DateTimeKind.Local).AddTicks(5447)),
+                    Borrow_date = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 11, 9, 16, 52, 12, 398, DateTimeKind.Local).AddTicks(3010)),
                     Time = table.Column<TimeSpan>(type: "time", nullable: false),
                     ParticipantNumber = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
                     User_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
@@ -320,8 +318,7 @@ namespace TBD_library.Data.Migrations
                         name: "FK_BorrowRooms_Users_User_id",
                         column: x => x.User_id,
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -330,7 +327,7 @@ namespace TBD_library.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Create_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 6, 6, 10, 22, 46, 394, DateTimeKind.Local).AddTicks(846)),
+                    Create_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 11, 9, 16, 52, 12, 398, DateTimeKind.Local).AddTicks(9234)),
                     watching_date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     RegistrationNumber = table.Column<int>(type: "int", nullable: false),
                     RegistrationLimit = table.Column<int>(type: "int", nullable: false, defaultValue: 30),
@@ -346,14 +343,12 @@ namespace TBD_library.Data.Migrations
                         name: "FK_Cinemas_Movies_Movie_id",
                         column: x => x.Movie_id,
                         principalTable: "Movies",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Cinemas_Users_User_id",
                         column: x => x.User_id,
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -366,7 +361,7 @@ namespace TBD_library.Data.Migrations
                     Summary = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Conten = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Img = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Created_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 6, 6, 10, 22, 46, 396, DateTimeKind.Local).AddTicks(5597)),
+                    Created_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 11, 9, 16, 52, 12, 401, DateTimeKind.Local).AddTicks(9696)),
                     Updated_at = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Slug = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ViewCount = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
@@ -396,12 +391,12 @@ namespace TBD_library.Data.Migrations
                     Author = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Publisher = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Img = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Created_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 6, 6, 10, 22, 46, 390, DateTimeKind.Local).AddTicks(3083)),
+                    Created_at = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 11, 9, 16, 52, 12, 394, DateTimeKind.Local).AddTicks(8381)),
                     Status = table.Column<int>(type: "int", nullable: false, defaultValue: 1),
                     BorrowCount = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
                     Slug = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     User_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    BorrowBook_id = table.Column<int>(type: "int", nullable: true)
+                    BorrowBook_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -410,14 +405,12 @@ namespace TBD_library.Data.Migrations
                         name: "FK_Books_BorrowBooks_BorrowBook_id",
                         column: x => x.BorrowBook_id,
                         principalTable: "BorrowBooks",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Books_Users_User_id",
                         column: x => x.User_id,
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -434,14 +427,12 @@ namespace TBD_library.Data.Migrations
                         name: "FK_BorrowInRoom_BorrowRooms_Borrow_id",
                         column: x => x.Borrow_id,
                         principalTable: "BorrowRooms",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_BorrowInRoom_Rooms_Room_id",
                         column: x => x.Room_id,
                         principalTable: "Rooms",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -450,7 +441,7 @@ namespace TBD_library.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Registration_date = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 6, 6, 10, 22, 46, 397, DateTimeKind.Local).AddTicks(8568)),
+                    Registration_date = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 11, 9, 16, 52, 12, 403, DateTimeKind.Local).AddTicks(4758)),
                     Status = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
                     Cinema_id = table.Column<int>(type: "int", nullable: false),
                     User_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
@@ -462,14 +453,12 @@ namespace TBD_library.Data.Migrations
                         name: "FK_Registrations_Cinemas_Cinema_id",
                         column: x => x.Cinema_id,
                         principalTable: "Cinemas",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Registrations_Users_User_id",
                         column: x => x.User_id,
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -510,14 +499,12 @@ namespace TBD_library.Data.Migrations
                         name: "FK_BookInCategories_BCategories_BCategory_id",
                         column: x => x.BCategory_id,
                         principalTable: "BCategories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_BookInCategories_Books_Book_id",
                         column: x => x.Book_id,
                         principalTable: "Books",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.InsertData(
@@ -557,12 +544,12 @@ namespace TBD_library.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Roles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Discription", "Name", "NormalizedName" },
-                values: new object[] { new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575"), "288c4f11-16ea-4682-9c8c-521213f56540", "được phép thay đổi và chỉnh sửa mọi tài nguyên hệ thống", "admin", "admin" });
+                values: new object[] { new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575"), "b7f26848-cb35-42d4-9cf2-69ee8b5e530b", "được phép thay đổi và chỉnh sửa mọi tài nguyên hệ thống", "admin", "admin" });
 
             migrationBuilder.InsertData(
                 table: "Rooms",
                 columns: new[] { "Id", "RoomName", "Room_date", "SessionTime", "Status" },
-                values: new object[] { 1, "phòng họp 6/6/2022 12:00:00 AM", new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local), 1, 0 });
+                values: new object[] { 1, "phòng họp 2022/11/09 0:00:00", new DateTime(2022, 11, 9, 0, 0, 0, 0, DateTimeKind.Local), 1, 0 });
 
             migrationBuilder.InsertData(
                 table: "UserRoles",
@@ -572,27 +559,27 @@ namespace TBD_library.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Majors", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "ShouldLock", "StudentCode", "TwoFactorEnabled", "UserName", "status" },
-                values: new object[] { new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575"), 0, "4a82ae4c-06f6-455e-b52e-a743dff10382", "quangthanhn485@gmail.com", true, false, null, "công nghệ thông tin", "quangthanhn485@gmail.com", "admin", "AQAAAAEAACcQAAAAEHTmyqGsfbdBP7+/wFSlxHoGghn+j81ZI3Ns2EEaabqKyUhqnwQs4yhNHxVUXryK+A==", "0373045581", false, "", null, 0, false, "admin", 3 });
+                values: new object[] { new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575"), 0, "59e202df-5f00-4eff-8879-8460630b0cf5", "quangthanhn485@gmail.com", true, false, null, "công nghệ thông tin", "quangthanhn485@gmail.com", "admin", "AQAAAAEAACcQAAAAEEVKmX5XCxIkiUghLwLjkFLZ3W1IjoXEfR8tfUR0XWFSecyIFXOL2EOmvk4sF1hsKg==", "0373045581", false, "", null, 0, false, "admin", 3 });
 
             migrationBuilder.InsertData(
                 table: "Books",
                 columns: new[] { "Id", "Author", "BorrowBook_id", "Created_at", "Description", "Img", "Name", "Publisher", "Slug", "Status", "Summary", "User_id" },
-                values: new object[] { 2, "Adam Khoo", null, new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local), "cuốn sách dạy ra các mẹo để có thể tối ưu tất cả những gì ta có thể làm", "toi-tai-gioi-ban-cung-the.jpg", "tôi tài giỏi bạn cũng thế", null, null, 1, "sach hay", new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575") });
+                values: new object[] { 2, "Adam Khoo", 0, new DateTime(2022, 11, 9, 0, 0, 0, 0, DateTimeKind.Local), "cuốn sách dạy ra các mẹo để có thể tối ưu tất cả những gì ta có thể làm", "toi-tai-gioi-ban-cung-the.jpg", "tôi tài giỏi bạn cũng thế", null, null, 1, "sach hay", new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575") });
 
             migrationBuilder.InsertData(
                 table: "BorrowBooks",
                 columns: new[] { "Id", "Borrowed_date", "Borrowed_time", "GiveBack_date", "Status", "User_id" },
-                values: new object[] { 1, new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local), new TimeSpan(0, 0, 0, 0, 0), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575") });
+                values: new object[] { 1, new DateTime(2022, 11, 9, 0, 0, 0, 0, DateTimeKind.Local), new TimeSpan(0, 0, 0, 0, 0), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575") });
 
             migrationBuilder.InsertData(
                 table: "BorrowRooms",
                 columns: new[] { "Id", "Borrow_date", "Time", "User_id" },
-                values: new object[] { 1, new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local), new TimeSpan(0, 2, 30, 0, 0), new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575") });
+                values: new object[] { 1, new DateTime(2022, 11, 9, 0, 0, 0, 0, DateTimeKind.Local), new TimeSpan(0, 2, 30, 0, 0), new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575") });
 
             migrationBuilder.InsertData(
                 table: "Cinemas",
                 columns: new[] { "Id", "Create_at", "Movie_id", "RegistrationLimit", "RegistrationNumber", "Slug", "User_id", "watching_date" },
-                values: new object[] { 1, new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local), 2, 35, 1, null, new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575"), new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local) });
+                values: new object[] { 1, new DateTime(2022, 11, 9, 0, 0, 0, 0, DateTimeKind.Local), 2, 35, 1, null, new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575"), new DateTime(2022, 11, 9, 0, 0, 0, 0, DateTimeKind.Local) });
 
             migrationBuilder.InsertData(
                 table: "MovieInCategories",
@@ -607,7 +594,7 @@ namespace TBD_library.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Posts",
                 columns: new[] { "Id", "Conten", "Created_at", "Img", "Slug", "Status", "Summary", "Title", "Updated_at", "User_id" },
-                values: new object[] { 1, "dữ liệu mẫu", new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local), null, null, 0, "mẫu ban đầu", "blog mẫu", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575") });
+                values: new object[] { 1, "dữ liệu mẫu", new DateTime(2022, 11, 9, 0, 0, 0, 0, DateTimeKind.Local), null, null, 0, "mẫu ban đầu", "blog mẫu", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575") });
 
             migrationBuilder.InsertData(
                 table: "BookInCategories",
@@ -617,7 +604,7 @@ namespace TBD_library.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Books",
                 columns: new[] { "Id", "Author", "BorrowBook_id", "Created_at", "Description", "Img", "Name", "Publisher", "Slug", "Summary", "User_id" },
-                values: new object[] { 1, "Blair T.Spalding", 1, new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local), "cuốn sách hay nhất mọi thời đại khám phá nhữ giá trị vĩnh hằng", "hanh-trinh-ve-phuong-dong.jpg", "hành trình về phương đông", null, null, "sach hay", new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575") });
+                values: new object[] { 1, "Blair T.Spalding", 1, new DateTime(2022, 11, 9, 0, 0, 0, 0, DateTimeKind.Local), "cuốn sách hay nhất mọi thời đại khám phá nhữ giá trị vĩnh hằng", "hanh-trinh-ve-phuong-dong.jpg", "hành trình về phương đông", null, null, "sach hay", new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575") });
 
             migrationBuilder.InsertData(
                 table: "BorrowInRoom",
@@ -632,7 +619,7 @@ namespace TBD_library.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Registrations",
                 columns: new[] { "Id", "Cinema_id", "Registration_date", "User_id" },
-                values: new object[] { 1, 1, new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local), new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575") });
+                values: new object[] { 1, 1, new DateTime(2022, 11, 9, 0, 0, 0, 0, DateTimeKind.Local), new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575") });
 
             migrationBuilder.InsertData(
                 table: "BookInCategories",

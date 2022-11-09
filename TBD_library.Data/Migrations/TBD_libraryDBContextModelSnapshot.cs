@@ -17,10 +17,10 @@ namespace TBD_library.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.5")
+                .HasAnnotation("ProductVersion", "6.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1, 1);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
@@ -28,7 +28,7 @@ namespace TBD_library.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
@@ -131,7 +131,7 @@ namespace TBD_library.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -170,13 +170,13 @@ namespace TBD_library.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Author")
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("BorrowBook_id")
+                    b.Property<int>("BorrowBook_id")
                         .HasColumnType("int");
 
                     b.Property<int>("BorrowCount")
@@ -187,7 +187,7 @@ namespace TBD_library.Data.Migrations
                     b.Property<DateTime>("Created_at")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 6, 6, 10, 22, 46, 390, DateTimeKind.Local).AddTicks(3083));
+                        .HasDefaultValue(new DateTime(2022, 11, 9, 16, 52, 12, 394, DateTimeKind.Local).AddTicks(8381));
 
                     b.Property<string>("Description")
                         .IsUnicode(true)
@@ -235,7 +235,7 @@ namespace TBD_library.Data.Migrations
                             Author = "Blair T.Spalding",
                             BorrowBook_id = 1,
                             BorrowCount = 0,
-                            Created_at = new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local),
+                            Created_at = new DateTime(2022, 11, 9, 0, 0, 0, 0, DateTimeKind.Local),
                             Description = "cuốn sách hay nhất mọi thời đại khám phá nhữ giá trị vĩnh hằng",
                             Img = "hanh-trinh-ve-phuong-dong.jpg",
                             Name = "hành trình về phương đông",
@@ -247,8 +247,9 @@ namespace TBD_library.Data.Migrations
                         {
                             Id = 2,
                             Author = "Adam Khoo",
+                            BorrowBook_id = 0,
                             BorrowCount = 0,
-                            Created_at = new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local),
+                            Created_at = new DateTime(2022, 11, 9, 0, 0, 0, 0, DateTimeKind.Local),
                             Description = "cuốn sách dạy ra các mẹo để có thể tối ưu tất cả những gì ta có thể làm",
                             Img = "toi-tai-gioi-ban-cung-the.jpg",
                             Name = "tôi tài giỏi bạn cũng thế",
@@ -291,12 +292,12 @@ namespace TBD_library.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("Borrowed_date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 6, 6, 10, 22, 46, 392, DateTimeKind.Local).AddTicks(2435));
+                        .HasDefaultValue(new DateTime(2022, 11, 9, 16, 52, 12, 396, DateTimeKind.Local).AddTicks(8233));
 
                     b.Property<TimeSpan>("Borrowed_time")
                         .HasColumnType("time");
@@ -322,7 +323,7 @@ namespace TBD_library.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Borrowed_date = new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local),
+                            Borrowed_date = new DateTime(2022, 11, 9, 0, 0, 0, 0, DateTimeKind.Local),
                             Borrowed_time = new TimeSpan(0, 0, 0, 0, 0),
                             GiveBack_date = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = 1,
@@ -358,12 +359,12 @@ namespace TBD_library.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("Borrow_date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 6, 6, 10, 22, 46, 393, DateTimeKind.Local).AddTicks(5447));
+                        .HasDefaultValue(new DateTime(2022, 11, 9, 16, 52, 12, 398, DateTimeKind.Local).AddTicks(3010));
 
                     b.Property<int>("ParticipantNumber")
                         .ValueGeneratedOnAdd()
@@ -386,7 +387,7 @@ namespace TBD_library.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Borrow_date = new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local),
+                            Borrow_date = new DateTime(2022, 11, 9, 0, 0, 0, 0, DateTimeKind.Local),
                             ParticipantNumber = 0,
                             Time = new TimeSpan(0, 2, 30, 0, 0),
                             User_id = new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575")
@@ -399,7 +400,7 @@ namespace TBD_library.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -431,12 +432,12 @@ namespace TBD_library.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("Create_at")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 6, 6, 10, 22, 46, 394, DateTimeKind.Local).AddTicks(846));
+                        .HasDefaultValue(new DateTime(2022, 11, 9, 16, 52, 12, 398, DateTimeKind.Local).AddTicks(9234));
 
                     b.Property<int>("Movie_id")
                         .HasColumnType("int");
@@ -475,13 +476,13 @@ namespace TBD_library.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Create_at = new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local),
+                            Create_at = new DateTime(2022, 11, 9, 0, 0, 0, 0, DateTimeKind.Local),
                             Movie_id = 2,
                             RegistrationLimit = 35,
                             RegistrationNumber = 1,
                             Status = 0,
                             User_id = new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575"),
-                            watching_date = new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local)
+                            watching_date = new DateTime(2022, 11, 9, 0, 0, 0, 0, DateTimeKind.Local)
                         });
                 });
 
@@ -491,7 +492,7 @@ namespace TBD_library.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("Borrowed_date")
                         .HasColumnType("datetime2");
@@ -524,7 +525,7 @@ namespace TBD_library.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("MovieName")
                         .IsRequired()
@@ -555,7 +556,7 @@ namespace TBD_library.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
@@ -587,7 +588,7 @@ namespace TBD_library.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -636,7 +637,7 @@ namespace TBD_library.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Img")
                         .HasColumnType("nvarchar(max)");
@@ -716,7 +717,7 @@ namespace TBD_library.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Conten")
                         .IsRequired()
@@ -726,7 +727,7 @@ namespace TBD_library.Data.Migrations
                     b.Property<DateTime>("Created_at")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 6, 6, 10, 22, 46, 396, DateTimeKind.Local).AddTicks(5597));
+                        .HasDefaultValue(new DateTime(2022, 11, 9, 16, 52, 12, 401, DateTimeKind.Local).AddTicks(9696));
 
                     b.Property<string>("Img")
                         .HasColumnType("nvarchar(max)");
@@ -769,7 +770,7 @@ namespace TBD_library.Data.Migrations
                         {
                             Id = 1,
                             Conten = "dữ liệu mẫu",
-                            Created_at = new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local),
+                            Created_at = new DateTime(2022, 11, 9, 0, 0, 0, 0, DateTimeKind.Local),
                             Status = 0,
                             Summary = "mẫu ban đầu",
                             Title = "blog mẫu",
@@ -807,7 +808,7 @@ namespace TBD_library.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("Cinema_id")
                         .HasColumnType("int");
@@ -815,7 +816,7 @@ namespace TBD_library.Data.Migrations
                     b.Property<DateTime>("Registration_date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 6, 6, 10, 22, 46, 397, DateTimeKind.Local).AddTicks(8568));
+                        .HasDefaultValue(new DateTime(2022, 11, 9, 16, 52, 12, 403, DateTimeKind.Local).AddTicks(4758));
 
                     b.Property<int>("Status")
                         .ValueGeneratedOnAdd()
@@ -838,7 +839,7 @@ namespace TBD_library.Data.Migrations
                         {
                             Id = 1,
                             Cinema_id = 1,
-                            Registration_date = new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local),
+                            Registration_date = new DateTime(2022, 11, 9, 0, 0, 0, 0, DateTimeKind.Local),
                             Status = 0,
                             User_id = new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575")
                         });
@@ -871,7 +872,7 @@ namespace TBD_library.Data.Migrations
                         new
                         {
                             Id = new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575"),
-                            ConcurrencyStamp = "288c4f11-16ea-4682-9c8c-521213f56540",
+                            ConcurrencyStamp = "b7f26848-cb35-42d4-9cf2-69ee8b5e530b",
                             Discription = "được phép thay đổi và chỉnh sửa mọi tài nguyên hệ thống",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -884,7 +885,7 @@ namespace TBD_library.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("RoomName")
                         .IsUnicode(true)
@@ -907,8 +908,8 @@ namespace TBD_library.Data.Migrations
                         new
                         {
                             Id = 1,
-                            RoomName = "phòng họp 6/6/2022 12:00:00 AM",
-                            Room_date = new DateTime(2022, 6, 6, 0, 0, 0, 0, DateTimeKind.Local),
+                            RoomName = "phòng họp 2022/11/09 0:00:00",
+                            Room_date = new DateTime(2022, 11, 9, 0, 0, 0, 0, DateTimeKind.Local),
                             SessionTime = 1,
                             Status = 0
                         });
@@ -985,14 +986,14 @@ namespace TBD_library.Data.Migrations
                         {
                             Id = new Guid("a18be9c0-aa65-4af8-bd17-00bd9344e575"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4a82ae4c-06f6-455e-b52e-a743dff10382",
+                            ConcurrencyStamp = "59e202df-5f00-4eff-8879-8460630b0cf5",
                             Email = "quangthanhn485@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Majors = "công nghệ thông tin",
                             NormalizedEmail = "quangthanhn485@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHTmyqGsfbdBP7+/wFSlxHoGghn+j81ZI3Ns2EEaabqKyUhqnwQs4yhNHxVUXryK+A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEVKmX5XCxIkiUghLwLjkFLZ3W1IjoXEfR8tfUR0XWFSecyIFXOL2EOmvk4sF1hsKg==",
                             PhoneNumber = "0373045581",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
@@ -1008,13 +1009,11 @@ namespace TBD_library.Data.Migrations
                     b.HasOne("TBD_library.Data.Entities.BorrowBook", "BorrowBook")
                         .WithMany("Books")
                         .HasForeignKey("BorrowBook_id")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .IsRequired();
 
                     b.HasOne("TBD_library.Data.Entities.User", "User")
                         .WithMany("Books")
-                        .HasForeignKey("User_id")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("User_id");
 
                     b.Navigation("BorrowBook");
 
@@ -1026,13 +1025,11 @@ namespace TBD_library.Data.Migrations
                     b.HasOne("TBD_library.Data.Entities.BCategory", "BCategory")
                         .WithMany("BookInCategories")
                         .HasForeignKey("BCategory_id")
-                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("TBD_library.Data.Entities.Book", "Book")
                         .WithMany("BookInCategories")
                         .HasForeignKey("Book_id")
-                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("BCategory");
@@ -1056,13 +1053,11 @@ namespace TBD_library.Data.Migrations
                     b.HasOne("TBD_library.Data.Entities.BorrowRoom", "BorrowRoom")
                         .WithMany("BorrowInRooms")
                         .HasForeignKey("Borrow_id")
-                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("TBD_library.Data.Entities.Room", "Room")
                         .WithMany("BorrowInRooms")
                         .HasForeignKey("Room_id")
-                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("BorrowRoom");
@@ -1074,9 +1069,7 @@ namespace TBD_library.Data.Migrations
                 {
                     b.HasOne("TBD_library.Data.Entities.User", "User")
                         .WithMany("BorrowRooms")
-                        .HasForeignKey("User_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("User_id");
 
                     b.Navigation("User");
                 });
@@ -1086,13 +1079,11 @@ namespace TBD_library.Data.Migrations
                     b.HasOne("TBD_library.Data.Entities.Movie", "Movie")
                         .WithMany("Cinemas")
                         .HasForeignKey("Movie_id")
-                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("TBD_library.Data.Entities.User", "User")
                         .WithMany("Cinemas")
                         .HasForeignKey("User_id")
-                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Movie");
@@ -1116,13 +1107,11 @@ namespace TBD_library.Data.Migrations
                     b.HasOne("TBD_library.Data.Entities.MCategory", "MCategory")
                         .WithMany("MovieInCategories")
                         .HasForeignKey("MCategory_id")
-                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("TBD_library.Data.Entities.Movie", "Movie")
                         .WithMany("MovieInCategories")
                         .HasForeignKey("Movie_id")
-                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("MCategory");
@@ -1165,13 +1154,11 @@ namespace TBD_library.Data.Migrations
                     b.HasOne("TBD_library.Data.Entities.Cinema", "Cinema")
                         .WithMany("Registrations")
                         .HasForeignKey("Cinema_id")
-                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("TBD_library.Data.Entities.User", "User")
                         .WithMany("Registrations")
                         .HasForeignKey("User_id")
-                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Cinema");

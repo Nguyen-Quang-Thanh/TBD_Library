@@ -203,6 +203,7 @@ namespace TBD_library.Data.Extention
                     Movie_id = 2,
                 }
             );
+
             modelBuilder.Entity<Cinema>().HasData(
                 new Cinema()
                 {
@@ -255,6 +256,12 @@ namespace TBD_library.Data.Extention
                 RoleId = new Guid(ROLE_ID),
                 UserId = new Guid(ADMIN_ID),
             });
+            modelBuilder.Entity<BorrowBook>().HasData(new BorrowBook
+                {
+                    Id = 1,
+
+                }
+            );
         }
     }
 }

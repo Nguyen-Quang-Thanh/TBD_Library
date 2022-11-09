@@ -17,8 +17,8 @@ namespace TBD_library.Data.Configurations
             builder.ToTable("BookInCategories");
             builder.HasKey(x => new { x.Book_id, x.BCategory_id });
 
-            builder.HasOne(x => x.Book).WithMany(x => x.BookInCategories).HasForeignKey(x => x.Book_id).OnDelete(DeleteBehavior.Restrict);
-            builder.HasOne(x => x.BCategory).WithMany(x => x.BookInCategories).HasForeignKey(x => x.BCategory_id).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(x => x.Book).WithMany(x => x.BookInCategories).HasForeignKey(x => x.Book_id).OnDelete(DeleteBehavior.ClientSetNull);
+            builder.HasOne(x => x.BCategory).WithMany(x => x.BookInCategories).HasForeignKey(x => x.BCategory_id).OnDelete(DeleteBehavior.ClientSetNull);
         }
     }
 }

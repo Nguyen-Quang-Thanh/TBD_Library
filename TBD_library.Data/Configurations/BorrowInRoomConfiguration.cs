@@ -17,8 +17,8 @@ namespace TBD_library.Data.Configurations
             builder.ToTable("BorrowInRoom");
             builder.HasKey(x => new { x.Borrow_id, x.Room_id });
 
-            builder.HasOne(x => x.BorrowRoom).WithMany(x => x.BorrowInRooms).HasForeignKey(x => x.Borrow_id).OnDelete(DeleteBehavior.Restrict);
-            builder.HasOne(x => x.Room).WithMany(x => x.BorrowInRooms).HasForeignKey(x => x.Room_id).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(x => x.BorrowRoom).WithMany(x => x.BorrowInRooms).HasForeignKey(x => x.Borrow_id).OnDelete(DeleteBehavior.ClientSetNull);
+            builder.HasOne(x => x.Room).WithMany(x => x.BorrowInRooms).HasForeignKey(x => x.Room_id).OnDelete(DeleteBehavior.ClientSetNull);
         }
     }
 }

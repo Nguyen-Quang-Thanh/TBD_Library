@@ -27,8 +27,8 @@ namespace TBD_library.Data.Configurations
             builder.Property(x => x.BorrowCount).IsRequired().HasDefaultValue(0);
             builder.Property(x => x.Slug).IsRequired(false);
 
-            builder.HasOne(x => x.User).WithMany(x => x.Books).HasForeignKey(x => x.User_id).OnDelete(DeleteBehavior.Restrict);
-            builder.HasOne(x => x.BorrowBook).WithMany(x => x.Books).HasForeignKey(x => x.BorrowBook_id).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(x => x.User).WithMany(x => x.Books).HasForeignKey(x => x.User_id).OnDelete(DeleteBehavior.ClientSetNull).IsRequired(false);
+            builder.HasOne(x => x.BorrowBook).WithMany(x => x.Books).HasForeignKey(x => x.BorrowBook_id).OnDelete(DeleteBehavior.ClientSetNull);
         }
     }
 }

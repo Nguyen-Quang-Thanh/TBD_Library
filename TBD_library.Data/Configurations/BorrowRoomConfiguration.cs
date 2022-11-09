@@ -20,9 +20,7 @@ namespace TBD_library.Data.Configurations
             builder.Property(x => x.Time).IsRequired();
             builder.Property(x => x.ParticipantNumber).IsRequired().HasDefaultValue(0);
 
-            builder.HasOne(x => x.User).WithMany(x => x.BorrowRooms).HasForeignKey(x => x.User_id);
-
-
+            builder.HasOne(x => x.User).WithMany(x => x.BorrowRooms).HasForeignKey(x => x.User_id).IsRequired(false);
         }
     }
 }
